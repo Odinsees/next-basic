@@ -1,13 +1,13 @@
 import type { NextPage } from 'next'
-import { Page } from '../components/Page'
+import StoriesList from '../components/common/storiesList'
 
-//SSR
+// SSR
 // export async function getServerSideProps(props: any) {
-//   //return getStories(props);
+//   return useSection()
 // }
 
 const Home: NextPage = (props: any) => {
-  return <Page {...props} />
+  return <StoriesList />
 }
 
 export default Home
