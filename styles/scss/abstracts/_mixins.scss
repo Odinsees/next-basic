@@ -1,0 +1,62 @@
+@mixin header-shadow {
+  background: #d9d9d9;
+  box-shadow: 0px 2px 10px rgba(22, 22, 22, 0.1);
+}
+
+@mixin common-shadow {
+  box-shadow: 0px 0px 10px rgba(22, 22, 22, 0.1);
+}
+
+@mixin extra-small-text-regular {
+  font-family: $type-family;
+  font-weight: $type-weight;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 18px;
+  color: $text;
+}
+
+@mixin small-text-regular {
+  font-family: $type-family;
+  font-weight: $type-weight;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: $text;
+}
+
+@mixin small-text-semi-bold {
+  font-family: $type-family;
+  font-weight: $type-weight--semi-bold;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: $text;
+}
+
+@mixin small-text-italic-regular {
+  font-family: $type-family;
+  font-weight: $type-weight--semi-bold;
+  font-style: italic;
+  font-size: 16px;
+  line-height: 24px;
+  color: $text;
+}
+
+@mixin heading-h1 {
+  font-family: $type-family;
+  font-weight: $type-weight--semi-bold;
+  font-style: normal;
+  font-size: 28px;
+  line-height: 38px;
+  color: $text;
+}
+
+@mixin heading-h2 {
+  font-family: $type-family;
+  font-weight: $type-weight--semi-bold;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 28px;
+  color: $text;
+}

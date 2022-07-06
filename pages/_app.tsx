@@ -1,17 +1,8 @@
 import type { AppProps } from 'next/app'
-import Footer from '../components/moddules/footer'
-import Header from '../components/moddules/header'
+import '../styles/scss/main.scss'
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return (
-    <div>
-      <Header />
-      <main>
-        <Component {...pageProps} />
-      </main>
-      <Footer />
-    </div>
-  )
+  return <Component {...pageProps} />
 }
 
 export default MyApp

@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import StoriesList from '../components/common/storiesList'
+import { HomePage } from '../components/HomePage'
 
 // SSR
 // export async function getServerSideProps(props: any) {
@@ -7,7 +7,7 @@ import StoriesList from '../components/common/storiesList'
 // }
 
 const Home: NextPage = (props: any) => {
-  return <StoriesList />
+  return <HomePage />
 }
 
 export default Home
