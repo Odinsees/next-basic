@@ -1,16 +1,17 @@
 import StoriesList from './common/storiesList'
-import Footer from './moddules/footer'
-import Header from './moddules/header'
-import style from './HomePage.module.scss'
+import Footer from './modules/footer'
+import Header from './modules/header'
 
 export const HomePage = (props: any) => {
   return (
-    <div className={style.layout}>
-      <Header />
-      <main className={style.layout__body}>
-        <StoriesList />
-      </main>
-      <Footer />
+    <div className={'layout'}>
+      <div className={'container'}>
+        <Header />
+        <main>
+          <StoriesList />
+        </main>
+        <Footer />
+      </div>
     </div>
   )
 }
