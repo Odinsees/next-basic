@@ -1,10 +1,10 @@
 import classNames from 'classnames'
 import Link from 'next/link'
 import { useState } from 'react'
-import style from './Header.module.scss'
+import style from './style.module.scss'
 
-const Header = () => {
-  const [activeLink, setActiveLink] = useState<string | null>()
+export const Header = () => {
+  const [activeLink, setActiveLink] = useState<string | null>('home')
 
   return (
     <div className={style.headerContainer}>
@@ -83,5 +83,3 @@ const Header = () => {
     </div>
   )
 }
-
-export default Header

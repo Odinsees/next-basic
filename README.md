@@ -1,5 +1,10 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Before start
+
+- create .env
+- add NEXT_PUBLIC_API_KEY - create app and add api-token from https://developer.nytimes.com/my-apps
+
 ## Getting Started
 
 First, run the development server:

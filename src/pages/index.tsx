@@ -1,12 +1,12 @@
 import type { NextPage } from 'next'
-import { HomePage } from '../components/HomePage'
+import { HomePage } from '../components/home-page/HomePage'
 
 // SSR
 // export async function getServerSideProps(props: any) {
 //   return useSection()
 // }
 
-const Home: NextPage = (props: any) => {
+const Home: NextPage = () => {
   return <HomePage />
 }
 
