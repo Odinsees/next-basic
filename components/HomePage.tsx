@@ -5,13 +5,13 @@ import Header from './modules/header'
 export const HomePage = (props: any) => {
   return (
     <div className={'layout'}>
-      <div className={'container'}>
-        <Header />
+      <Header />
+      <div className="container">
         <main>
           <StoriesList />
         </main>
-        <Footer />
       </div>
+      <Footer />
     </div>
   )
 }

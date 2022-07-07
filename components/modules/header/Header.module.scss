@@ -1,0 +1,51 @@
+@import '../../../styles/scss/abstracts/mixins';
+@import '../../../styles/scss/abstracts/variables';
+
+.headerContainer {
+  @include header-shadow;
+  .headerInner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    margin-bottom: 40px;
+
+    .headerLogo {
+    }
+    .headerMenu {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 0px;
+      gap: 32px;
+      height: 100%;
+      .headerMenuLink {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        @include small-text-semi-bold;
+        color: $sub-text;
+        &:hover {
+          color: $text !important;
+        }
+      }
+      .headerMenuLinkActive {
+        @extend .headerMenuLink;
+        color: $text !important;
+        position: relative;
+        &:before {
+          position: absolute;
+          content: '';
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border-bottom: 5px solid $main;
+        }
+      }
+    }
+  }
+}
