@@ -1,8 +1,8 @@
+import { FunctionComponent } from 'react'
+import style from './style.module.scss'
 import Moment from 'moment'
 import { v4 as uuidv4 } from 'uuid'
 import { StoryFetcher } from '../../../../service/storyFetcher'
-import { FunctionComponent } from 'react'
-import style from './style.module.scss'
 import { Story } from '../../../../models/story'
 
 export const StoriesList: FunctionComponent = () => {

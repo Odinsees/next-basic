@@ -5,6 +5,7 @@ import style from './style.module.scss'
 
 export const Header = () => {
   const [activeLink, setActiveLink] = useState<string | null>('home')
+  const [openBurger, setOpenBurger] = useState(false)
 
   return (
     <div className={style.headerContainer}>
@@ -12,7 +13,11 @@ export const Header = () => {
         <div className={style.headerLogo}>
           <img src="logo.png" alt="logo" />
         </div>
-        <nav className={style.headerMenu}>
+        <nav
+          className={classNames(
+            openBurger ? style.headerMenuOpened : style.headerMenu,
+          )}
+        >
           <Link href="/" passHref>
             <a
               className={classNames(
@@ -21,6 +26,7 @@ export const Header = () => {
               )}
               onClick={() => {
                 setActiveLink('home')
+                setOpenBurger(false)
               }}
             >
               Home
@@ -34,6 +40,7 @@ export const Header = () => {
               )}
               onClick={() => {
                 setActiveLink('world')
+                setOpenBurger(false)
               }}
             >
               World
@@ -47,6 +54,7 @@ export const Header = () => {
               )}
               onClick={() => {
                 setActiveLink('automobiles')
+                setOpenBurger(false)
               }}
             >
               Automobiles
@@ -60,6 +68,7 @@ export const Header = () => {
               )}
               onClick={() => {
                 setActiveLink('real-estate')
+                setOpenBurger(false)
               }}
             >
               Real Estate
@@ -73,12 +82,17 @@ export const Header = () => {
               )}
               onClick={() => {
                 setActiveLink('finance')
+                setOpenBurger(false)
               }}
             >
               Finance
             </a>
           </Link>
         </nav>
+        <button
+          className={classNames(style.burger, openBurger && style.activeBurger)}
+          onClick={() => setOpenBurger(!openBurger)}
+        ></button>
       </div>
     </div>
   )

@@ -3,6 +3,7 @@
 
 .headerContainer {
   @include header-shadow;
+
   .headerInner {
     max-width: 1200px;
     margin: 0 auto;
@@ -12,7 +13,11 @@
     height: 60px;
     margin-bottom: 40px;
 
-    .headerLogo {
+    .burger {
+      display: none;
+      width: 24px;
+      height: 20px;
+      background: url('../../../../public/burger.png');
     }
     .headerMenu {
       display: flex;
@@ -47,5 +52,71 @@
         }
       }
     }
+  }
+}
+
+@media (max-width: 1200px) {
+  .headerInner {
+    max-width: 970px !important;
+  }
+}
+@media (max-width: 992px) {
+  .headerContainer {
+    .headerInner {
+      position: relative !important;
+      max-width: 750px !important;
+      .burger {
+        display: block !important;
+        z-index: 2;
+      }
+      .headerMenu {
+        display: none;
+      }
+      .headerMenuOpened {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0;
+        height: 100vh !important;
+        width: 100vw !important;
+        background-color: white !important;
+        overflow: hidden !important;
+        z-index: 1 !important;
+        transition: left 0.2 ease-out !important;
+        .headerMenuLink {
+          height: 5%;
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          @include small-text-semi-bold;
+          color: $sub-text;
+          &:hover {
+            color: $text !important;
+          }
+        }
+        .headerMenuLinkActive {
+          color: $text !important;
+          position: relative;
+          &:before {
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-bottom: 3px solid $main;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 767px) {
+  .headerInner {
+    padding: 16px;
+    max-width: none !important;
   }
 }
