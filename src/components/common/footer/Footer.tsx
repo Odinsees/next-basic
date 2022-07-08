@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { FaceBookIcon } from './components/icons/facebook-icon/FacebookIcon'
 import { InstagramIcon } from './components/icons/instagram-icon/InstagramIcon'
-import TwitterIcon from './components/icons/twitter-icon/TwitterIcon'
+import { TwitterIcon } from './components/icons/twitter-icon/TwitterIcon'
 import style from './style.module.scss'
 
 export const Footer = () => {
@@ -29,13 +29,16 @@ export const Footer = () => {
           </div>
           <div className={style.footerIcons}>
             <div className={style.footerIcon}>
-              <TwitterIcon />
+              {/* <TwitterIcon /> */}
+              <img src="./icons/twitter.svg" alt="twitter logo" />
             </div>
             <div className={style.footerIcon}>
-              <FaceBookIcon />
+              {/* <FaceBookIcon /> */}
+              <img src="./icons/fb.svg" alt="twitter logo" />
             </div>
             <div className={style.footerIcon}>
-              <InstagramIcon />
+              {/* <InstagramIcon /> */}
+              <img src="./icons/inst.svg" alt="twitter logo" />
             </div>
           </div>
         </div>

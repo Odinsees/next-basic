@@ -1,3 +1,4 @@
+import * as React from 'react'
 import { SVGProps, useState } from 'react'
 
 export const InstagramIcon = (props: SVGProps<SVGSVGElement>) => {
