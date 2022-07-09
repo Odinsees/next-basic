@@ -1,6 +1,6 @@
 import useSWR from 'swr'
 import fetch from 'unfetch'
-import { Story } from '../models/story'
+import { Story } from '@models/story'
 
 const API_KEY = process.env.NEXT_PUBLIC_API_KEY
 

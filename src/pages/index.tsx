@@ -1,10 +1,5 @@
 import type { NextPage } from 'next'
-import { HomePage } from '../components/home-page/HomePage'
-
-// SSR
-// export async function getServerSideProps(props: any) {
-//   return useSection()
-// }
+import { HomePage } from '@components/home-page/HomePage'
 
 const Home: NextPage = () => {
   return <HomePage />

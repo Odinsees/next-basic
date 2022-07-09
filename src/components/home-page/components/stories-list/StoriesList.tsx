@@ -1,9 +1,9 @@
 import { FunctionComponent } from 'react'
-import style from './style.module.scss'
+import styles from './styles.module.scss'
 import Moment from 'moment'
-import { v4 as uuidv4 } from 'uuid'
-import { StoryFetcher } from '../../../../service/storyFetcher'
-import { Story } from '../../../../models/story'
+import { StoryFetcher } from '@service/storyFetcher'
+import { Story } from '@models/story'
+import Image from 'next/image'
 
 export const StoriesList: FunctionComponent = () => {
   const formatDate = (date: Date) => {
@@ -16,35 +16,29 @@ export const StoriesList: FunctionComponent = () => {
   if (isError) return <div>Error</div>
 
   return (
-    <div className="container">
-      <div className={style.blockRow}>
-        {stories.map((story: Story) => {
-          return (
-            <div key={uuidv4()} className={style.blockColumn}>
-              <div className={style.blockItem}>
-                <div className={style.storyDescription}>
-                  <div>
-                    <div className={style.storySectionBlock}>
-                      <p className={style.storySection}>{story.section}</p>
-                      <p className={style.storySectionDate}>
-                        {formatDate(story.updated_date)}
-                      </p>
-                    </div>
-                    <h2 className={style.storyTitle}>{story.title}</h2>
-                    <p className={style.storyAbstract}>{story.abstract}</p>
-                  </div>
-                  <p className={style.storyDate}>
-                    {formatDate(story.updated_date)}
-                  </p>
-                </div>
-                <div className={style.storyImage}>
-                  <img src={story.multimedia[0].url} alt="photo" />
-                </div>
-              </div>
+    <div className={styles.container}>
+      {stories.map((story: Story, index) => {
+        return (
+          <div key={index} className={styles.storyContainer}>
+            <div className={styles.storyInfo}>
+              <p className={styles.storySection}>{story.section}</p>
+              <h2 className={styles.storyTitle}>{story.title}</h2>
+              <p className={styles.storyAbstract}>{story.abstract}</p>
+              <p className={styles.storySectionDate}>
+                {formatDate(story.updated_date)}
+              </p>
             </div>
-          )
-        })}
-      </div>
+            <div className={styles.storyImage}>
+              <Image
+                src={story.multimedia[0].url}
+                alt="photo"
+                width={story.multimedia[0].width}
+                height={story.multimedia[0].height}
+              />
+            </div>
+          </div>
+        )
+      })}
     </div>
   )
 }
