@@ -1,8 +1,10 @@
-import Link from 'next/link'
-import { FaceBookIcon } from './components/icons/facebook-icon/FacebookIcon'
-import { InstagramIcon } from './components/icons/instagram-icon/InstagramIcon'
-import { TwitterIcon } from './components/icons/twitter-icon/TwitterIcon'
-import style from './style.module.scss'
+import Link from 'next/link';
+
+import { FaceBookIcon } from './components/icons/facebook-icon/FacebookIcon';
+import { InstagramIcon } from './components/icons/instagram-icon/InstagramIcon';
+import { TwitterIcon } from './components/icons/twitter-icon/TwitterIcon';
+
+import style from './style.module.scss';
 
 export const Footer = () => {
   return (
@@ -44,5 +46,5 @@ export const Footer = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};

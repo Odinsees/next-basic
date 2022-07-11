@@ -1,11 +1,14 @@
-import classNames from 'classnames'
-import Link from 'next/link'
-import { useState } from 'react'
-import style from './style.module.scss'
+import { useState } from 'react';
+
+import Link from 'next/link';
+
+import classNames from 'classnames';
+
+import style from './style.module.scss';
 
 export const Header = () => {
-  const [activeLink, setActiveLink] = useState<string | null>('home')
-  const [openBurger, setOpenBurger] = useState(false)
+  const [activeLink, setActiveLink] = useState<string | null>('home');
+  const [openBurger, setOpenBurger] = useState(false);
 
   return (
     <div className={style.headerContainer}>
@@ -25,8 +28,8 @@ export const Header = () => {
                 activeLink === 'home' && style.headerMenuLinkActive,
               )}
               onClick={() => {
-                setActiveLink('home')
-                setOpenBurger(false)
+                setActiveLink('home');
+                setOpenBurger(false);
               }}
             >
               Home
@@ -39,8 +42,8 @@ export const Header = () => {
                 activeLink === 'world' && style.headerMenuLinkActive,
               )}
               onClick={() => {
-                setActiveLink('world')
-                setOpenBurger(false)
+                setActiveLink('world');
+                setOpenBurger(false);
               }}
             >
               World
@@ -53,8 +56,8 @@ export const Header = () => {
                 activeLink === 'automobiles' && style.headerMenuLinkActive,
               )}
               onClick={() => {
-                setActiveLink('automobiles')
-                setOpenBurger(false)
+                setActiveLink('automobiles');
+                setOpenBurger(false);
               }}
             >
               Automobiles
@@ -67,8 +70,8 @@ export const Header = () => {
                 activeLink === 'real-estate' && style.headerMenuLinkActive,
               )}
               onClick={() => {
-                setActiveLink('real-estate')
-                setOpenBurger(false)
+                setActiveLink('real-estate');
+                setOpenBurger(false);
               }}
             >
               Real Estate
@@ -81,8 +84,8 @@ export const Header = () => {
                 activeLink === 'finance' && style.headerMenuLinkActive,
               )}
               onClick={() => {
-                setActiveLink('finance')
-                setOpenBurger(false)
+                setActiveLink('finance');
+                setOpenBurger(false);
               }}
             >
               Finance
@@ -95,5 +98,5 @@ export const Header = () => {
         ></button>
       </div>
     </div>
-  )
-}
+  );
+};

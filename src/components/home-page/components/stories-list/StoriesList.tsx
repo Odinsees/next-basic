@@ -1,23 +1,26 @@
-import { FunctionComponent } from 'react'
-import styles from './styles.module.scss'
-import Moment from 'moment'
-import { StoryFetcher } from '@service/storyFetcher'
-import { Story } from '@models/story'
-import Image from 'next/image'
+import { FunctionComponent } from 'react';
+
+import { Story } from '@models/story';
+
+import { useStory } from '@hooks/useStory';
+
+import Moment from 'moment';
+import Image from 'next/image';
+import styles from './styles.module.scss';
 
 export const StoriesList: FunctionComponent = () => {
   const formatDate = (date: Date) => {
-    const formatDate = Moment(date).format('MMM DD, YYYY, HH:mm')
-    return formatDate
-  }
+    const formatDate = Moment(date).format('MMM DD, YYYY, HH:mm');
+    return formatDate;
+  };
 
-  const { stories, isLoading, isError } = StoryFetcher('technology')
-  if (isLoading) return <div>Loading...</div>
-  if (isError) return <div>Error</div>
+  const { stories, isLoading, isError } = useStory('technology');
+  if (isLoading) return <div>Loading...</div>;
+  if (isError) return <div>Error</div>;
 
   return (
     <div className={styles.container}>
-      {stories.map((story: Story, index) => {
+      {stories.map((story: Story, index: number) => {
         return (
           <div key={index} className={styles.storyContainer}>
             <div className={styles.storyInfo}>
@@ -37,8 +40,8 @@ export const StoriesList: FunctionComponent = () => {
               />
             </div>
           </div>
-        )
+        );
       })}
     </div>
-  )
-}
+  );
+};
