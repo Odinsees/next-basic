@@ -80,9 +80,8 @@
   padding: 4px 8px;
 
   background-color: $main;
-  // @include small-text-semi-bold;
-  @include text($type-weight--semi-bold, 'normal', 16px, 24px, $text);
-  color: $text-white;
+
+  @include text($type-weight--semi-bold, 'normal', 16px, 24px, $text-white);
 
   border-radius: 4px;
 }
