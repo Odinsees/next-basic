@@ -80,7 +80,8 @@
   padding: 4px 8px;
 
   background-color: $main;
-  @include small-text-semi-bold;
+  // @include small-text-semi-bold;
+  @include text($type-weight--semi-bold, 'normal', 16px, 24px, $text);
   color: $text-white;
 
   border-radius: 4px;
@@ -90,19 +91,21 @@
   grid-area: title;
 
   margin-top: 20px;
-  @include heading-h2;
+  @include text($type-weight--semi-bold, 'normal', 20px, 28px, $text);
 }
 
 .storyAbstract {
   grid-area: abstract;
   align-self: start;
-  @include small-text-regular;
+
+  // @include small-text-regular;
+  @include text($type-weight, 'normal', 16px, 24px, $text);
 }
 
 .storySectionDate {
   grid-area: date;
   align-self: end;
-  @include extra-small-text-regular;
+  @include text($type-weight, 'normal', 14px, 18px, $text);
 }
 
 .storyImage {

@@ -31,8 +31,7 @@
         display: flex;
         align-items: center;
         cursor: pointer;
-        @include small-text-semi-bold;
-        color: $sub-text;
+        @include text($type-weight--semi-bold, 'normal', 16px, 24px, $sub-text);
         &:hover {
           color: $text !important;
         }
@@ -91,8 +90,14 @@
           display: flex;
           align-items: center;
           cursor: pointer;
-          @include small-text-semi-bold;
-          color: $sub-text;
+          @include text(
+            $type-weight--semi-bold,
+            'normal',
+            16px,
+            24px,
+            $sub-text
+          );
+
           &:hover {
             color: $text !important;
           }

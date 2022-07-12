@@ -14,7 +14,7 @@ export const Header = () => {
     <div className={style.headerContainer}>
       <div className={style.headerInner}>
         <div className={style.headerLogo}>
-          <img src="logo.png" alt="logo" />
+          <img src="../logo.png" alt="logo" />
         </div>
         <nav
           className={classNames(

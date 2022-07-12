@@ -1,8 +1,8 @@
-import { Footer } from '@components/common/footer/Footer'
-import { Header } from '@components/common/header/Header'
-import type { AppProps } from 'next/app'
-import Head from 'next/head'
-import '@styles/scss/main.scss'
+import { Footer } from '@components/common/footer/Footer';
+import { Header } from '@components/common/header/Header';
+import type { AppProps } from 'next/app';
+import Head from 'next/head';
+import '@styles/scss/main.scss';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Footer />
       </div>
     </>
-  )
+  );
 }
 
-export default MyApp
+export default MyApp;

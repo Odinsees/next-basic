@@ -15,8 +15,7 @@
       justify-content: space-between;
       border-top: 1px solid #d1d1d1;
       .date {
-        @include extra-small-text-regular;
-        color: $sub-text;
+        @include text($type-weight, 'normal', 14px, 18px, $sub-text);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -29,8 +28,7 @@
         padding: 0px;
         gap: 32px;
         .footerLink {
-          @include extra-small-text-regular;
-          color: $sub-text;
+          @include text($type-weight, 'normal', 14px, 18px, $sub-text);
           &:hover {
             color: $text;
           }

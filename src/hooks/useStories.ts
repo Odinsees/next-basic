@@ -1,21 +1,21 @@
-import { API_KEY, TOP_STORIES } from '@constants/api';
+import { TOP_STORIES } from '@constants/api';
 
 import { Story } from '@models/story';
 
-import { storyFetcher } from '@service/storyFetcher';
+import { storiesFetcher } from '@service/storiesFetcher';
 
 import useSWR from 'swr';
 
-type StoryFetcher = {
+type UseStories = {
   stories: Story[];
   isLoading: boolean;
   isError: boolean;
 };
 
-export const useStories = (section: string): StoryFetcher => {
+export const useStories = (section: string): UseStories => {
   const { data, error } = useSWR(
-    `${TOP_STORIES}/${section}.json?api-key=${API_KEY}`,
-    storyFetcher,
+    `${TOP_STORIES}/${section}.json`,
+    storiesFetcher,
   );
 
   return {
