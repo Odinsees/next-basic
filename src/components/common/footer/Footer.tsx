@@ -32,16 +32,16 @@ export const Footer: FunctionComponent = () => {
           </div>
           <div className={styles.footerIcons}>
             <div className={styles.footerIcon}>
-              {/* <TwitterIcon /> */}
-              <img src="../icons/twitter.svg" alt="twitter logo" />
+              <TwitterIcon />
+              {/* <img src="../icons/twitter.svg" alt="twitter logo" /> */}
             </div>
             <div className={styles.footerIcon}>
-              {/* <FaceBookIcon /> */}
-              <img src="../icons/fb.svg" alt="twitter logo" />
+              <FaceBookIcon />
+              {/* <img src="../icons/fb.svg" alt="twitter logo" /> */}
             </div>
             <div className={styles.footerIcon}>
-              {/* <InstagramIcon /> */}
-              <img src="../icons/inst.svg" alt="twitter logo" />
+              <InstagramIcon />
+              {/* <img src="../icons/inst.svg" alt="twitter logo" /> */}
             </div>
           </div>
         </div>

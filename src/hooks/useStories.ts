@@ -1,8 +1,8 @@
-import { TOP_STORIES } from '@constants/api';
+import { TOP_STORIES } from 'constants/api';
 
-import { Story } from '@models/story';
+import { Story } from 'models/story';
 
-import { storiesFetcher } from '@service/storiesFetcher';
+import { storiesFetcher } from 'service/storiesFetcher';
 
 import useSWR from 'swr';
 

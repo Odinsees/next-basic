@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react';
 
-import { StoryPage } from '@components/story-page/StoryPage';
+import { StoryPage } from 'components/story-page/StoryPage';
 
 const Story: FunctionComponent = () => {
   return <StoryPage />;

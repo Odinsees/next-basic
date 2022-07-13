@@ -1,7 +1,7 @@
-import { Article } from '@models/article';
+import { Article } from 'models/article';
 
-import { SEARCH_STORY } from '@constants/api';
-import { articlesFetcher } from '@service/articleFetcher';
+import { SEARCH_STORY } from 'constants/api';
+import { articlesFetcher } from 'service/articleFetcher';
 
 import useSWR from 'swr';
 

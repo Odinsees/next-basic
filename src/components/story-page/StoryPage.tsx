@@ -1,12 +1,14 @@
 import { FunctionComponent } from 'react';
 import { useRouter } from 'next/router';
 
-import { useArticle } from '@hooks/useArticle';
+import { useArticle } from 'hooks/useArticle';
 
 export const StoryPage: FunctionComponent = () => {
   const router = useRouter();
   const { id } = router.query;
   const { article, isLoading, isError } = useArticle(id);
+
+  console.log(article);
 
   if (isLoading) return <div>Loading...</div>;
 

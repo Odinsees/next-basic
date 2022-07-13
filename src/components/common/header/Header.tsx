@@ -4,28 +4,28 @@ import Link from 'next/link';
 
 import classNames from 'classnames';
 
-import style from './style.module.scss';
+import styles from './styles.module.scss';
 
 export const Header = () => {
   const [activeLink, setActiveLink] = useState<string | null>('home');
   const [openBurger, setOpenBurger] = useState(false);
 
   return (
-    <div className={style.headerContainer}>
-      <div className={style.headerInner}>
-        <div className={style.headerLogo}>
+    <div className={styles.headerContainer}>
+      <div className={styles.headerInner}>
+        <div className={styles.headerLogo}>
           <img src="../logo.png" alt="logo" />
         </div>
         <nav
           className={classNames(
-            openBurger ? style.headerMenuOpened : style.headerMenu,
+            openBurger ? styles.headerMenuOpened : styles.headerMenu,
           )}
         >
           <Link href="/" passHref>
             <a
               className={classNames(
-                style.headerMenuLink,
-                activeLink === 'home' && style.headerMenuLinkActive,
+                styles.headerMenuLink,
+                activeLink === 'home' && styles.headerMenuLinkActive,
               )}
               onClick={() => {
                 setActiveLink('home');
@@ -38,8 +38,8 @@ export const Header = () => {
           <Link href="/world" passHref>
             <a
               className={classNames(
-                style.headerMenuLink,
-                activeLink === 'world' && style.headerMenuLinkActive,
+                styles.headerMenuLink,
+                activeLink === 'world' && styles.headerMenuLinkActive,
               )}
               onClick={() => {
                 setActiveLink('world');
@@ -52,8 +52,8 @@ export const Header = () => {
           <Link href="/automobiles" passHref>
             <a
               className={classNames(
-                style.headerMenuLink,
-                activeLink === 'automobiles' && style.headerMenuLinkActive,
+                styles.headerMenuLink,
+                activeLink === 'automobiles' && styles.headerMenuLinkActive,
               )}
               onClick={() => {
                 setActiveLink('automobiles');
@@ -66,8 +66,8 @@ export const Header = () => {
           <Link href="/real-estate" passHref>
             <a
               className={classNames(
-                style.headerMenuLink,
-                activeLink === 'real-estate' && style.headerMenuLinkActive,
+                styles.headerMenuLink,
+                activeLink === 'real-estate' && styles.headerMenuLinkActive,
               )}
               onClick={() => {
                 setActiveLink('real-estate');
@@ -80,8 +80,8 @@ export const Header = () => {
           <Link href="/finance" passHref>
             <a
               className={classNames(
-                style.headerMenuLink,
-                activeLink === 'finance' && style.headerMenuLinkActive,
+                styles.headerMenuLink,
+                activeLink === 'finance' && styles.headerMenuLinkActive,
               )}
               onClick={() => {
                 setActiveLink('finance');
@@ -93,7 +93,10 @@ export const Header = () => {
           </Link>
         </nav>
         <button
-          className={classNames(style.burger, openBurger && style.activeBurger)}
+          className={classNames(
+            styles.burger,
+            openBurger && styles.activeBurger,
+          )}
           onClick={() => setOpenBurger(!openBurger)}
         ></button>
       </div>

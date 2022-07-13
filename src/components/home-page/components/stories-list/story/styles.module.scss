@@ -1,0 +1,60 @@
+@import 'styles/scss/abstracts/mixins';
+@import 'styles/scss/abstracts/variables';
+
+.container {
+  margin-bottom: 20px;
+  @include common-shadow;
+
+  cursor: pointer;
+
+  @media (min-width: $screen-s) {
+    display: flex;
+
+    border-radius: 8px;
+
+    .storyInfo {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      width: 45%;
+
+      padding: 40px;
+    }
+
+    .storyImage {
+      width: 55%;
+    }
+  }
+}
+
+.storyInfo {
+  padding: 20px 15px;
+}
+
+.storyHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 20px;
+}
+
+.storyDate {
+  @include extra-small-text-regular;
+}
+
+.storyTitle {
+  margin-bottom: 16px;
+  @include heading-h2;
+}
+
+.storyPreview {
+  @include small-text-regular;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

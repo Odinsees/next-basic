@@ -1,5 +1,5 @@
-@import '@styles/scss/abstracts/mixins';
-@import '@styles/scss/abstracts/variables';
+@import 'styles/scss/abstracts/mixins';
+@import 'styles/scss/abstracts/variables';
 
 .headerContainer {
   @include header-shadow;
