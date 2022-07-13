@@ -1,0 +1,45 @@
+@import 'styles/scss/abstracts/mixins';
+@import 'styles/scss/abstracts/variables';
+
+.headerLinkWrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 15px;
+
+  @media (min-width: $screen-s) {
+    flex-direction: row;
+    align-items: center;
+    gap: 32px;
+    padding: 0;
+    height: 100%;
+  }
+}
+
+.headerMenuLink {
+  width: fit-content;
+  margin: 16px;
+  @include custom-font-size(16, $custom-gray);
+  font-weight: $type-weight--semi-bold;
+
+  @media (min-width: $screen-s) {
+    margin: 0;
+  }
+}
+
+.headerMenuLinkActive {
+  position: relative;
+  color: $custom-black;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 110%;
+    left: 0;
+    width: 100%;
+    border-bottom: 5px solid $custom-pink;
+
+    @media (min-width: $screen-s) {
+      top: 34px;
+    }
+  }
+}

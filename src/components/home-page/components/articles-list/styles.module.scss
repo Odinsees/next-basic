@@ -1,7 +1,7 @@
 @import 'styles/scss/abstracts/mixins';
 @import 'styles/scss/abstracts/variables';
 
-.layout {
-  max-width: $screen-xl;
+.container {
+  max-width: $screen-l;
   margin: 0 auto;
 }

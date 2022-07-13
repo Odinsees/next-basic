@@ -1,6 +1,6 @@
-import { SVGProps } from 'react';
+import { FunctionComponent, SVGProps } from 'react';
 
-export const FaceBookIcon = (props: SVGProps<SVGSVGElement>) => {
+export const FaceBook: FunctionComponent = (props: SVGProps<SVGSVGElement>) => {
   return (
     <svg
       height={18}
@@ -13,7 +13,7 @@ export const FaceBookIcon = (props: SVGProps<SVGSVGElement>) => {
         fillRule="evenodd"
         clipRule="evenodd"
         d="M0 9.05025C0 13.5248 3.24975 17.2455 7.5 18V11.4998H5.25V9H7.5V6.99975C7.5 4.74975 8.94975 3.50025 11.0002 3.50025C11.6497 3.50025 12.3503 3.6 12.9998 3.69975V6H11.85C10.7498 6 10.5 6.54975 10.5 7.25025V9H12.9L12.5002 11.4998H10.5V18C14.7502 17.2455 18 13.5255 18 9.05025C18 4.0725 13.95 0 9 0C4.05 0 0 4.0725 0 9.05025Z"
-        fill="#161616"
+        fill="#7A7A7A"
       />
     </svg>
   );

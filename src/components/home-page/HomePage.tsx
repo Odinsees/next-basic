@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react';
-import { StoriesList } from './components/stories-list/StoriesList';
+import { ArticlesList } from './components/articles-list/ArticlesList';
 
 export const HomePage: FunctionComponent = () => {
-  return <StoriesList />;
+  return <ArticlesList />;
 };

@@ -2,14 +2,13 @@
 @import 'styles/scss/abstracts/variables';
 
 .sectionTitle {
-  width: fit-content;
-
   padding: 4px 8px;
-
-  background-color: $custom-pink;
   border-radius: 4px;
+  background-color: $custom-pink;
+  @include custom-font-size(14px, $custom-white);
+  line-height: 18px;
+  font-weight: $type-weight--semi-bold;
 
-  @include custom-text-section;
   &:first-letter {
     text-transform: uppercase;
   }

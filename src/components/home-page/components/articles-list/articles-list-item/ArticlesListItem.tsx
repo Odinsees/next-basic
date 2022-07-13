@@ -1,18 +1,23 @@
 import { FunctionComponent } from 'react';
 import Image from 'next/image';
-import { Story as StoryType } from 'models/story';
+import Link from 'next/link';
+import { ArticleListItemType } from 'models/articles-list-item';
 import { formatDate } from 'formatters/date';
 import { SectionTitle } from 'components/common/section-title/SectionTitle';
+
 import styles from './styles.module.scss';
-import Link from 'next/link';
 
 type Props = {
-  story: StoryType;
+  story: ArticleListItemType;
   isDesktop: boolean;
 };
 
-export const Story: FunctionComponent<Props> = ({ story, isDesktop }) => {
+export const ArticlesListItem: FunctionComponent<Props> = ({
+  story,
+  isDesktop,
+}) => {
   const articleId = story.uri.split('/').slice(-1)[0];
+
   return (
     <>
       <Link href={`story/${articleId}`}>
@@ -20,7 +25,9 @@ export const Story: FunctionComponent<Props> = ({ story, isDesktop }) => {
           <div className={styles.storyInfo}>
             <div>
               <div className={styles.storyHeader}>
-                <SectionTitle title={story.section} />
+                <div>
+                  <SectionTitle title={story.section} />
+                </div>
                 {!isDesktop && (
                   <p className={styles.storyDate}>
                     {formatDate(story.updated_date)}
@@ -36,10 +43,8 @@ export const Story: FunctionComponent<Props> = ({ story, isDesktop }) => {
               </p>
             )}
           </div>
-
           <div className={styles.storyImage}>
             <Image
-              className={styles.storyImage}
               src={story.multimedia[0].url}
               alt="photo"
               width={375}

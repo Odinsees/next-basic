@@ -6,87 +6,15 @@
   box-shadow: 0px 0px 10px rgba(22, 22, 22, 0.1);
 }
 
-@mixin text($font-weight, $font-style, $font-size, $line-height, $color) {
-  font-family: $type-family;
-  font-weight: $font-weight;
-  font-style: $font-style;
+$font-weights: (
+  14px: 18px,
+  16px: 24px,
+  20px: 28px,
+  28px: 35px,
+);
+
+@mixin custom-font-size($font-size, $color: $custom-black) {
   font-size: $font-size;
-  line-height: $line-height;
-  color: $custom-black;
-}
-
-@mixin custom-text {
-  font-family: $type-family;
-  font-weight: $type-weight--semi-bold;
-  font-style: normal;
-}
-
-@mixin extra-small-text-regular($color: $custom-black) {
-  @include custom-text;
-  font-weight: $type-weight;
-  font-size: 14px;
-  line-height: 18px;
-  @if $color {
-    color: $color;
-  }
-}
-
-@mixin small-text-regular($color: $custom-black) {
-  @include custom-text;
-  font-weight: $type-weight;
-  font-size: 16px;
-  line-height: 24px;
-  @if $color {
-    color: $color;
-  }
-}
-
-@mixin custom-text-section($color: $custom-white) {
-  @include custom-text;
-  font-size: 16px;
-  line-height: 18px;
-  @if $color {
-    color: $color;
-  }
-}
-
-@mixin small-text-semi-bold($color: $custom-black) {
-  @include custom-text;
-  font-size: 16px;
-  line-height: 24px;
-  color: $custom-black;
-  @if $color {
-    color: $color;
-  }
-}
-
-@mixin small-text-italic-regular($color: $custom-black) {
-  @include custom-text;
-  font-style: italic;
-  font-size: 16px;
-  line-height: 24px;
-  color: $custom-black;
-  @if $color {
-    color: $color;
-  }
-}
-
-@mixin heading-h1($color: $custom-black) {
-  @include custom-text;
-  font-size: 28px;
-  line-height: 38px;
-  color: $custom-black;
-  @if $color {
-    color: $color;
-  }
-}
-
-@mixin heading-h2($color: $custom-black) {
-  @include custom-text;
-  font-size: 20px;
-  line-height: 28px;
-  color: $custom-black;
-  @if $color {
-    color: $color;
-  }
+  line-height: map-get($font-weights, $font-size);
+  color: $color;
 }

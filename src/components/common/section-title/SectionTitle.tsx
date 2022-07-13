@@ -1,4 +1,5 @@
 import { FunctionComponent } from 'react';
+
 import styles from './styles.module.scss';
 
 type Props = {
@@ -6,5 +7,5 @@ type Props = {
 };
 
 export const SectionTitle: FunctionComponent<Props> = ({ title }) => {
-  return <div className={styles.sectionTitle}>{title}</div>;
+  return <p className={styles.sectionTitle}>{title}</p>;
 };

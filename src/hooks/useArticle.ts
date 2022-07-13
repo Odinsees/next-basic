@@ -1,8 +1,5 @@
 import { Article } from 'models/article';
-
-import { SEARCH_STORY } from 'constants/api';
 import { articlesFetcher } from 'service/articleFetcher';
-
 import useSWR from 'swr';
 
 type UseArticle = {
@@ -12,13 +9,10 @@ type UseArticle = {
 };
 
 export const useArticle = (id: string | string[] | undefined): UseArticle => {
-  const { data, error } = useSWR(
-    `${SEARCH_STORY}?fq=uri:("nyt://article/${id}")`,
-    articlesFetcher,
-  );
+  const { data, error } = useSWR(id, articlesFetcher);
 
   return {
-    article: data && data.response.docs,
+    article: data && data.response.docs[0],
     isLoading: !error && !data,
     isError: error,
   };

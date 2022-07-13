@@ -1,127 +1,55 @@
 @import 'styles/scss/abstracts/mixins';
 @import 'styles/scss/abstracts/variables';
 
-.headerContainer {
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  margin-bottom: 20px;
+  position: relative;
   @include header-shadow;
 
-  .headerInner {
-    max-width: 1200px;
+  @media (min-width: $screen-s) {
+    max-width: $screen-l;
     margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 60px;
-    margin-bottom: 40px;
-
-    .burger {
-      display: none;
-      width: 24px;
-      height: 20px;
-      background: url('../../../../public/burger.png');
-    }
-    .headerMenu {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      padding: 0px;
-      gap: 32px;
-      height: 100%;
-      .headerMenuLink {
-        height: 100%;
-        display: flex;
-        align-items: center;
-        cursor: pointer;
-        @include text($type-weight--semi-bold, 'normal', 16px, 24px, $sub-text);
-        &:hover {
-          color: $text !important;
-        }
-      }
-      .headerMenuLinkActive {
-        @extend .headerMenuLink;
-        color: $text !important;
-        position: relative;
-        &:before {
-          position: absolute;
-          content: '';
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          border-bottom: 5px solid $main;
-        }
-      }
-    }
+    margin-bottom: 20px;
+    padding: 16px 40px 16px 40px;
   }
 }
 
-@media (max-width: 1200px) {
-  .headerInner {
-    max-width: 970px !important;
-  }
+.headerLogo {
+  cursor: pointer;
 }
-@media (max-width: 992px) {
-  .headerContainer {
-    .headerInner {
-      position: relative !important;
-      max-width: 750px !important;
-      .burger {
-        display: block !important;
-        z-index: 2;
-      }
-      .headerMenu {
-        display: none;
-      }
-      .headerMenuOpened {
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: center !important;
-        align-items: center !important;
-        position: fixed !important;
-        top: 0 !important;
-        left: 0;
-        height: 100vh !important;
-        width: 100vw !important;
-        background-color: white !important;
-        overflow: hidden !important;
-        z-index: 1 !important;
-        transition: left 0.2 ease-out !important;
-        .headerMenuLink {
-          height: 5%;
-          display: flex;
-          align-items: center;
-          cursor: pointer;
-          @include text(
-            $type-weight--semi-bold,
-            'normal',
-            16px,
-            24px,
-            $sub-text
-          );
 
-          &:hover {
-            color: $text !important;
-          }
-        }
-        .headerMenuLinkActive {
-          color: $text !important;
-          position: relative;
-          &:before {
-            position: absolute;
-            content: '';
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border-bottom: 3px solid $main;
-          }
-        }
-      }
-    }
-  }
+.headerBurgerWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
 }
-@media (max-width: 767px) {
-  .headerInner {
-    padding: 16px;
-    max-width: none !important;
+
+.hederBurger {
+  padding: 0;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  color: inherit;
+  background-color: transparent;
+}
+
+.headerMenu {
+  z-index: 2;
+  position: absolute;
+  width: 100%;
+  margin-top: -20px;
+  background-color: #fbfbfb;
+  @include header-shadow;
+
+  @media (min-width: $screen-s) {
+    position: inherit;
+    width: auto;
+    box-shadow: none;
+    background-color: inherit;
+    margin: 0;
   }
 }

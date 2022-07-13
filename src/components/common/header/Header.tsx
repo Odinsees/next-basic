@@ -1,105 +1,66 @@
-import { useState } from 'react';
-
+import { useMediaQuerySSR } from 'hooks/useMediaQuerySSR';
+import { FunctionComponent, useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
-
-import classNames from 'classnames';
+import { MOBILE_SIZE } from 'constants/screenSize';
+import { Links } from './components/links/Links';
 
 import styles from './styles.module.scss';
 
-export const Header = () => {
+export const Header: FunctionComponent = () => {
   const [activeLink, setActiveLink] = useState<string | null>('home');
   const [openBurger, setOpenBurger] = useState(false);
+  const isDesktop = useMediaQuerySSR(`(min-width: ${MOBILE_SIZE}px)`);
 
   return (
-    <div className={styles.headerContainer}>
-      <div className={styles.headerInner}>
-        <div className={styles.headerLogo}>
-          <img src="../logo.png" alt="logo" />
-        </div>
-        <nav
-          className={classNames(
-            openBurger ? styles.headerMenuOpened : styles.headerMenu,
-          )}
-        >
-          <Link href="/" passHref>
-            <a
-              className={classNames(
-                styles.headerMenuLink,
-                activeLink === 'home' && styles.headerMenuLinkActive,
-              )}
+    <>
+      <div className={styles.container}>
+        <Link href={'/'}>
+          <div className={styles.headerLogo}>
+            <Image src={'/logo.svg'} alt="logo" width={129} height={28} />
+          </div>
+        </Link>
+
+        {isDesktop && (
+          <nav className={styles.headerMenu}>
+            <Links
+              activeLink={activeLink}
+              setActiveLink={setActiveLink}
+              setOpenBurger={setOpenBurger}
+            />
+          </nav>
+        )}
+        {!isDesktop && (
+          <div className={styles.headerBurgerWrapper}>
+            <button
+              className={styles.hederBurger}
               onClick={() => {
-                setActiveLink('home');
-                setOpenBurger(false);
+                setOpenBurger(!openBurger);
               }}
             >
-              Home
-            </a>
-          </Link>
-          <Link href="/world" passHref>
-            <a
-              className={classNames(
-                styles.headerMenuLink,
-                activeLink === 'world' && styles.headerMenuLinkActive,
+              {openBurger ? (
+                <Image
+                  src={'/burger-clicked.svg'}
+                  alt="logo"
+                  width={18}
+                  height={18}
+                />
+              ) : (
+                <Image src={'/burger.svg'} alt="logo" width={24} height={20} />
               )}
-              onClick={() => {
-                setActiveLink('world');
-                setOpenBurger(false);
-              }}
-            >
-              World
-            </a>
-          </Link>
-          <Link href="/automobiles" passHref>
-            <a
-              className={classNames(
-                styles.headerMenuLink,
-                activeLink === 'automobiles' && styles.headerMenuLinkActive,
-              )}
-              onClick={() => {
-                setActiveLink('automobiles');
-                setOpenBurger(false);
-              }}
-            >
-              Automobiles
-            </a>
-          </Link>
-          <Link href="/real-estate" passHref>
-            <a
-              className={classNames(
-                styles.headerMenuLink,
-                activeLink === 'real-estate' && styles.headerMenuLinkActive,
-              )}
-              onClick={() => {
-                setActiveLink('real-estate');
-                setOpenBurger(false);
-              }}
-            >
-              Real Estate
-            </a>
-          </Link>
-          <Link href="/finance" passHref>
-            <a
-              className={classNames(
-                styles.headerMenuLink,
-                activeLink === 'finance' && styles.headerMenuLinkActive,
-              )}
-              onClick={() => {
-                setActiveLink('finance');
-                setOpenBurger(false);
-              }}
-            >
-              Finance
-            </a>
-          </Link>
-        </nav>
-        <button
-          className={classNames(
-            styles.burger,
-            openBurger && styles.activeBurger,
-          )}
-          onClick={() => setOpenBurger(!openBurger)}
-        ></button>
+            </button>
+          </div>
+        )}
       </div>
-    </div>
+      {!isDesktop && openBurger && (
+        <nav className={styles.headerMenu}>
+          <Links
+            activeLink={activeLink}
+            setActiveLink={setActiveLink}
+            setOpenBurger={setOpenBurger}
+          />
+        </nav>
+      )}
+    </>
   );
 };

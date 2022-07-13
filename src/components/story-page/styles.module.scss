@@ -1,0 +1,57 @@
+@import 'styles/scss/abstracts/mixins';
+@import 'styles/scss/abstracts/variables';
+
+.container {
+  max-width: $screen-article;
+  margin: 0 auto;
+  margin-top: -20px;
+  padding: 0 15px 0 15px;
+}
+
+.articleHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0 24px 0;
+
+  @media (min-width: $screen-s) {
+    justify-content: start;
+  }
+}
+
+.articleDate {
+  @include custom-font-size(14px);
+  font-weight: $type-weight;
+
+  @media (min-width: $screen-s) {
+    margin-left: 20px;
+  }
+}
+
+.articleImage {
+  margin: 0 -15px 20px -15px;
+
+  @media (min-width: $screen-s) {
+    position: relative;
+    height: 458px;
+    margin: 0;
+    margin-bottom: 40px;
+  }
+}
+
+.articleTitle {
+  margin-bottom: 16px;
+  @include custom-font-size(28px);
+  font-weight: $type-weight--semi-bold;
+}
+
+.articleSubTitle {
+  margin-bottom: 40px;
+  @include custom-font-size(16px);
+  font-style: italic;
+}
+
+.articleText {
+  margin-bottom: 20px;
+  @include custom-font-size(16px);
+}
