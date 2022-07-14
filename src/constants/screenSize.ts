@@ -1,1 +1,1 @@
-export const MOBILE_SIZE = 768;
+export const MEDIA_QUERY = '(min-width: 768px)';

@@ -1,12 +1,13 @@
 @import 'styles/scss/abstracts/mixins';
 @import 'styles/scss/abstracts/variables';
 
-.container {
+.header {
+  position: relative;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 20px;
   margin-bottom: 20px;
-  position: relative;
   @include header-shadow;
 
   @media (min-width: $screen-s) {
@@ -37,19 +38,19 @@
   background-color: transparent;
 }
 
-.headerMenu {
-  z-index: 2;
-  position: absolute;
-  width: 100%;
-  margin-top: -20px;
-  background-color: #fbfbfb;
-  @include header-shadow;
+// .headerMenu {
+//   z-index: 2;
+//   position: absolute;
+//   width: 100%;
+//   margin-top: -20px;
+//   background-color: #fbfbfb;
+//   @include header-shadow;
 
-  @media (min-width: $screen-s) {
-    position: inherit;
-    width: auto;
-    box-shadow: none;
-    background-color: inherit;
-    margin: 0;
-  }
-}
+//   @media (min-width: $screen-s) {
+//     position: inherit;
+//     width: auto;
+//     box-shadow: none;
+//     background-color: inherit;
+//     margin: 0;
+//   }
+// }

@@ -10,83 +10,48 @@ type Props = {
   setOpenBurger: (value: boolean) => void;
 };
 
+type LinksType = Link[];
+
+type Link = {
+  title: string;
+  link: string;
+};
+
 export const Links: FunctionComponent<Props> = ({
   activeLink,
   setActiveLink,
   setOpenBurger,
 }) => {
+  const links: LinksType = [
+    { title: 'home', link: '/' },
+    { title: 'world', link: '/world' },
+    { title: 'automobiles', link: '/automobiles' },
+    { title: 'real estate', link: '/real-estate' },
+    { title: 'finance', link: '/world' },
+  ];
+
   return (
-    <div className={styles.headerLinkWrapper}>
-      <Link href="/" passHref>
-        <a
-          className={classNames(
-            styles.headerMenuLink,
-            activeLink === 'home' && styles.headerMenuLinkActive,
-          )}
-          onClick={() => {
-            setActiveLink('home');
-            setOpenBurger(false);
-          }}
-        >
-          Home
-        </a>
-      </Link>
-      <Link href="/world" passHref>
-        <a
-          className={classNames(
-            styles.headerMenuLink,
-            activeLink === 'world' && styles.headerMenuLinkActive,
-          )}
-          onClick={() => {
-            setActiveLink('world');
-            setOpenBurger(false);
-          }}
-        >
-          World
-        </a>
-      </Link>
-      <Link href="/automobiles" passHref>
-        <a
-          className={classNames(
-            styles.headerMenuLink,
-            activeLink === 'automobiles' && styles.headerMenuLinkActive,
-          )}
-          onClick={() => {
-            setActiveLink('automobiles');
-            setOpenBurger(false);
-          }}
-        >
-          Automobiles
-        </a>
-      </Link>
-      <Link href="/real-estate" passHref>
-        <a
-          className={classNames(
-            styles.headerMenuLink,
-            activeLink === 'real-estate' && styles.headerMenuLinkActive,
-          )}
-          onClick={() => {
-            setActiveLink('real-estate');
-            setOpenBurger(false);
-          }}
-        >
-          Real Estate
-        </a>
-      </Link>
-      <Link href="/finance" passHref>
-        <a
-          className={classNames(
-            styles.headerMenuLink,
-            activeLink === 'finance' && styles.headerMenuLinkActive,
-          )}
-          onClick={() => {
-            setActiveLink('finance');
-            setOpenBurger(false);
-          }}
-        >
-          Finance
-        </a>
-      </Link>
-    </div>
+    <nav className={styles.links}>
+      {links.map(link => {
+        return (
+          <>
+            <Link href={link.link} passHref>
+              <a
+                className={classNames(
+                  styles.headerMenuLink,
+                  activeLink === link.title && styles.headerMenuLinkActive,
+                )}
+                onClick={() => {
+                  setActiveLink(link.title);
+                  setOpenBurger(false);
+                }}
+              >
+                {link.title}
+              </a>
+            </Link>
+          </>
+        );
+      })}
+    </nav>
   );
 };

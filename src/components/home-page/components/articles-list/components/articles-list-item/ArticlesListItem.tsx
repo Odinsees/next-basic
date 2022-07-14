@@ -21,13 +21,11 @@ export const ArticlesListItem: FunctionComponent<Props> = ({
   return (
     <>
       <Link href={`articles/${articleId}`}>
-        <div className={styles.container}>
+        <div className={styles.articlesListItem}>
           <div className={styles.articleInfo}>
             <div>
               <div className={styles.articleHeader}>
-                <div>
-                  <SectionTitle title={article.section} />
-                </div>
+                <SectionTitle title={article.section} />
                 {!isDesktop && (
                   <p className={styles.articleDate}>
                     {formatDate(article.updated_date)}

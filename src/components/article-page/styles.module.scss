@@ -1,7 +1,7 @@
 @import 'styles/scss/abstracts/mixins';
 @import 'styles/scss/abstracts/variables';
 
-.container {
+.articlePage {
   max-width: $screen-article;
   margin: 0 auto;
   margin-top: -20px;
@@ -21,7 +21,6 @@
 
 .articleDate {
   @include custom-font-size(14px);
-  font-weight: $type-weight;
 
   @media (min-width: $screen-s) {
     margin-left: 20px;

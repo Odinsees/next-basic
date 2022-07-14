@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <meta name="viewport" content="width=device-width" />
       </Head>
-      <div className={'layout'}>
+      <div className="layout">
         <Header />
         <main>
           <Component {...pageProps} />

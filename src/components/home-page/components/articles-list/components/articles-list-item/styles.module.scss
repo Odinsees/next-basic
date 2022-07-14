@@ -1,7 +1,7 @@
 @import 'styles/scss/abstracts/mixins';
 @import 'styles/scss/abstracts/variables';
 
-.container {
+.articlesListItem {
   margin-bottom: 20px;
   cursor: pointer;
   @include common-shadow;
@@ -27,6 +27,10 @@
 .articleImage {
   @media (min-width: $screen-s) {
     width: 55%;
+
+    & img {
+      border-radius: 0 8px 8px 0;
+    }
   }
 }
 
@@ -39,7 +43,6 @@
 
 .articleDate {
   @include custom-font-size(14px);
-  font-weight: $type-weight;
 }
 
 .articleTitle {
@@ -50,5 +53,4 @@
 
 .articlePreview {
   @include custom-font-size(16px);
-  font-weight: $type-weight;
 }

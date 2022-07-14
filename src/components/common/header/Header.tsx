@@ -1,34 +1,32 @@
-import { useMediaQuerySSR } from 'hooks/useMediaQuerySSR';
 import { FunctionComponent, useState } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
-import { MOBILE_SIZE } from 'constants/screenSize';
+import { MEDIA_QUERY } from 'constants/screenSize';
+import { useMediaQuerySSR } from 'hooks/useMediaQuerySSR';
 import { Links } from './components/links/Links';
+import { CloseBurger, OpenBurger, SiteLogo } from '../icons';
 
 import styles from './styles.module.scss';
 
 export const Header: FunctionComponent = () => {
   const [activeLink, setActiveLink] = useState<string | null>('home');
   const [openBurger, setOpenBurger] = useState(false);
-  const isDesktop = useMediaQuerySSR(`(min-width: ${MOBILE_SIZE}px)`);
+  const isDesktop = useMediaQuerySSR(MEDIA_QUERY);
 
   return (
     <>
-      <div className={styles.container}>
+      <div className={styles.header}>
         <Link href={'/'}>
           <div className={styles.headerLogo}>
-            <Image src={'/logo.svg'} alt="logo" width={129} height={28} />
+            <SiteLogo />
           </div>
         </Link>
 
         {isDesktop && (
-          <nav className={styles.headerMenu}>
-            <Links
-              activeLink={activeLink}
-              setActiveLink={setActiveLink}
-              setOpenBurger={setOpenBurger}
-            />
-          </nav>
+          <Links
+            activeLink={activeLink}
+            setActiveLink={setActiveLink}
+            setOpenBurger={setOpenBurger}
+          />
         )}
         {!isDesktop && (
           <div className={styles.headerBurgerWrapper}>
@@ -38,16 +36,7 @@ export const Header: FunctionComponent = () => {
                 setOpenBurger(!openBurger);
               }}
             >
-              {openBurger ? (
-                <Image
-                  src={'/burger-clicked.svg'}
-                  alt="logo"
-                  width={18}
-                  height={18}
-                />
-              ) : (
-                <Image src={'/burger.svg'} alt="logo" width={24} height={20} />
-              )}
+              {openBurger ? <OpenBurger /> : <CloseBurger />}
             </button>
           </div>
         )}

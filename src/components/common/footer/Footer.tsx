@@ -1,14 +1,12 @@
 import { FunctionComponent } from 'react';
 import Link from 'next/link';
-import { FaceBook } from '../icons/social/facebook/Facebook';
-import { Instagram } from '../icons/social/instagram/Instagram';
-import { Twitter } from '../icons/social/twitter/Twitter';
+import { Twitter, Facebook, Instagram } from '../icons';
 
 import styles from './styles.module.scss';
 
 export const Footer: FunctionComponent = () => {
   return (
-    <div className={styles.container}>
+    <div className={styles.footer}>
       <div className={styles.footerLinks}>
         <Link href={'/about-us'} passHref>
           <a className={styles.footerLink}>About us</a>
@@ -35,7 +33,7 @@ export const Footer: FunctionComponent = () => {
           </Link>
           <Link href={'/facebook'}>
             <div className={styles.footerIcon}>
-              <FaceBook />
+              <Facebook />
             </div>
           </Link>
           <Link href={'/instagram'}>
