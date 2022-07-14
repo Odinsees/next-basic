@@ -8,44 +8,44 @@ import { SectionTitle } from 'components/common/section-title/SectionTitle';
 import styles from './styles.module.scss';
 
 type Props = {
-  story: ArticleListItemType;
+  article: ArticleListItemType;
   isDesktop: boolean;
 };
 
 export const ArticlesListItem: FunctionComponent<Props> = ({
-  story,
+  article,
   isDesktop,
 }) => {
-  const articleId = story.uri.split('/').slice(-1)[0];
+  const articleId = article.uri.split('/').slice(-1)[0];
 
   return (
     <>
-      <Link href={`story/${articleId}`}>
+      <Link href={`articles/${articleId}`}>
         <div className={styles.container}>
-          <div className={styles.storyInfo}>
+          <div className={styles.articleInfo}>
             <div>
-              <div className={styles.storyHeader}>
+              <div className={styles.articleHeader}>
                 <div>
-                  <SectionTitle title={story.section} />
+                  <SectionTitle title={article.section} />
                 </div>
                 {!isDesktop && (
-                  <p className={styles.storyDate}>
-                    {formatDate(story.updated_date)}
+                  <p className={styles.articleDate}>
+                    {formatDate(article.updated_date)}
                   </p>
                 )}
               </div>
-              <h4 className={styles.storyTitle}>{story.title}</h4>
-              <p className={styles.storyPreview}>{story.abstract}</p>
+              <h4 className={styles.articleTitle}>{article.title}</h4>
+              <p className={styles.articlePreview}>{article.abstract}</p>
             </div>
             {isDesktop && (
-              <p className={styles.storyDate}>
-                {formatDate(story.updated_date)}
+              <p className={styles.articleDate}>
+                {formatDate(article.updated_date)}
               </p>
             )}
           </div>
-          <div className={styles.storyImage}>
+          <div className={styles.articleImage}>
             <Image
-              src={story.multimedia[0].url}
+              src={article.multimedia[0].url}
               alt="photo"
               width={375}
               height={280}

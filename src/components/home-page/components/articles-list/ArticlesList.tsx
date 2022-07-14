@@ -8,7 +8,7 @@ import { ArticlesListItem } from './articles-list-item/ArticlesListItem';
 import styles from './styles.module.scss';
 
 export const ArticlesList: FunctionComponent = () => {
-  const { stories, isLoading, isError } = useArticlesList('technology');
+  const { articles, isLoading, isError } = useArticlesList('technology');
   const isDesktop = useMediaQuery(`(min-width: ${MOBILE_SIZE}px)`);
 
   if (isLoading) return <div>Loading...</div>;
@@ -17,12 +17,12 @@ export const ArticlesList: FunctionComponent = () => {
 
   return (
     <div className={styles.container}>
-      {stories.map((story: ArticleListItemType) => {
+      {articles.map((article: ArticleListItemType) => {
         return (
           <ArticlesListItem
-            story={story}
+            article={article}
             isDesktop={isDesktop}
-            key={story.uri}
+            key={article.uri}
           />
         );
       })}
