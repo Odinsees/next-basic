@@ -10,26 +10,26 @@ type Props = {
   setOpenBurger: (value: boolean) => void;
 };
 
-type LinksType = Link[];
+type LinksType = LinkType[];
 
-type Link = {
+type LinkType = {
   title: string;
   link: string;
 };
+
+const links: LinksType = [
+  { title: 'home', link: '/' },
+  { title: 'world', link: '/world' },
+  { title: 'automobiles', link: '/automobiles' },
+  { title: 'real estate', link: '/real-estate' },
+  { title: 'finance', link: '/world' },
+];
 
 export const Links: FunctionComponent<Props> = ({
   activeLink,
   setActiveLink,
   setOpenBurger,
 }) => {
-  const links: LinksType = [
-    { title: 'home', link: '/' },
-    { title: 'world', link: '/world' },
-    { title: 'automobiles', link: '/automobiles' },
-    { title: 'real estate', link: '/real-estate' },
-    { title: 'finance', link: '/world' },
-  ];
-
   return (
     <nav className={styles.links}>
       {links.map(link => {

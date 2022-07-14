@@ -2,14 +2,14 @@ import { FunctionComponent } from 'react';
 import { MEDIA_QUERY } from 'constants/screenSize';
 import { ArticleListItemType } from 'models/articles-list-item';
 import { useArticlesList } from 'hooks/useArticlesList';
-import { useMediaQuery } from 'usehooks-ts';
+import { useMediaQuerySSR } from 'hooks/useMediaQuerySSR';
 import { ArticlesListItem } from './components/articles-list-item/ArticlesListItem';
 
 import styles from './styles.module.scss';
 
 export const ArticlesList: FunctionComponent = () => {
   const { articles, isLoading, isError } = useArticlesList('technology');
-  const isDesktop = useMediaQuery(MEDIA_QUERY);
+  const isDesktop = useMediaQuerySSR(MEDIA_QUERY);
 
   if (isLoading) return <div>Loading...</div>;
 
