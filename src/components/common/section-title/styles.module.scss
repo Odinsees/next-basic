@@ -1,0 +1,15 @@
+@import 'styles/scss/abstracts/mixins';
+@import 'styles/scss/abstracts/variables';
+
+.sectionTitle {
+  padding: 4px 8px;
+  border-radius: 4px;
+  background-color: $custom-pink;
+  @include custom-font-size(14px, $custom-white);
+  line-height: 18px;
+  font-weight: $type-weight--semi-bold;
+
+  &:first-letter {
+    text-transform: uppercase;
+  }
+}

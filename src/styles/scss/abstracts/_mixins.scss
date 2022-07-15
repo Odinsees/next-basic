@@ -1,0 +1,20 @@
+@mixin header-shadow {
+  box-shadow: 0px 2px 10px rgba(22, 22, 22, 0.1);
+}
+
+@mixin common-shadow {
+  box-shadow: 0px 0px 10px rgba(22, 22, 22, 0.1);
+}
+
+$font-weights: (
+  14px: 18px,
+  16px: 24px,
+  20px: 28px,
+  28px: 35px,
+);
+
+@mixin custom-font-size($font-size, $color: $custom-black) {
+  font-size: $font-size;
+  line-height: map-get($font-weights, $font-size);
+  color: $color;
+}

@@ -1,0 +1,7 @@
+@import 'styles/scss/abstracts/mixins';
+@import 'styles/scss/abstracts/variables';
+
+.articlesList {
+  max-width: $screen-l;
+  margin: 0 auto;
+}

@@ -1,0 +1,56 @@
+@import 'styles/scss/abstracts/mixins';
+@import 'styles/scss/abstracts/variables';
+
+.articlesListItem {
+  margin-bottom: 20px;
+  cursor: pointer;
+  @include common-shadow;
+
+  @media (min-width: $screen-s) {
+    display: flex;
+    border-radius: 8px;
+  }
+}
+
+.articleInfo {
+  padding: 20px 15px;
+
+  @media (min-width: $screen-s) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 45%;
+    padding: 40px;
+  }
+}
+
+.articleImage {
+  @media (min-width: $screen-s) {
+    width: 55%;
+
+    & img {
+      border-radius: 0 8px 8px 0;
+    }
+  }
+}
+
+.articleHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.articleDate {
+  @include custom-font-size(14px);
+}
+
+.articleTitle {
+  margin-bottom: 16px;
+  @include custom-font-size(20px);
+  font-weight: $type-weight--semi-bold;
+}
+
+.articlePreview {
+  @include custom-font-size(16px);
+}

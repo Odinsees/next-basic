@@ -1,0 +1,39 @@
+@import 'styles/scss/abstracts/mixins';
+@import 'styles/scss/abstracts/variables';
+
+.header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  margin-bottom: 20px;
+  @include header-shadow;
+
+  @media (min-width: $screen-s) {
+    max-width: $screen-l;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding: 16px 40px 16px 40px;
+  }
+}
+
+.headerLogo {
+  cursor: pointer;
+}
+
+.headerBurgerWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+}
+
+.hederBurger {
+  padding: 0;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  color: inherit;
+  background-color: transparent;
+}
