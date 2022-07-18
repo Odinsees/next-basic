@@ -8,7 +8,7 @@ type UseArticle = {
   isError: boolean;
 };
 
-export const useArticle = (id: string | string[] | undefined): UseArticle => {
+export const useArticle = (id: string): UseArticle => {
   const { data, error } = useSWR(id, articlesFetcher);
 
   return {
