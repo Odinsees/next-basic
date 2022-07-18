@@ -1,5 +1,5 @@
 import { Article } from 'models/article';
-import { articlesFetcher } from 'service/articleFetcher';
+import { articleFetcher } from 'service/articleFetcher';
 import useSWR from 'swr';
 
 type UseArticle = {
@@ -9,7 +9,7 @@ type UseArticle = {
 };
 
 export const useArticle = (id: string): UseArticle => {
-  const { data, error } = useSWR(id, articlesFetcher);
+  const { data, error } = useSWR(id, articleFetcher);
 
   return {
     article: data && data.response.docs[0],
