@@ -18,7 +18,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
     const data = await articleFetcher(id);
     const articleData = Boolean(data.response.docs.length);
 
-    if (!articleData) {
+    if (!data || !articleData) {
       return { notFound: true };
     }
 
