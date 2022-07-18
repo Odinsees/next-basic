@@ -1,20 +1,24 @@
 import { FunctionComponent } from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import { MEDIA_QUERY } from 'constants/screenSize';
 import { BASE_URL_IMAGE } from 'constants/api';
-import { Article } from 'models/article';
+import { useArticle } from 'hooks/useArticle';
 import { useMediaQuerySSR } from 'hooks/useMediaQuerySSR';
 import { formatDate } from 'formatters/date';
 import { SectionTitle } from 'components/common/section-title/SectionTitle';
 
 import styles from './styles.module.scss';
 
-type Props = {
-  article: Article;
-};
-
-export const ArticlePage: FunctionComponent<Props> = ({ article }) => {
+export const ArticlePage: FunctionComponent = () => {
+  const router = useRouter();
+  const id = router.query.id;
+  const { article, isError, isLoading } = useArticle(id);
   const isDesktop = useMediaQuerySSR(MEDIA_QUERY);
+
+  if (isLoading) return <div>Loading...</div>;
+
+  if (isError) return <div>Error</div>;
 
   return (
     <div className={styles.articlePage}>
