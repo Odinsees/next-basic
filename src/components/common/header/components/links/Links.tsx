@@ -22,7 +22,7 @@ const links: LinksType = [
   { title: 'world', link: '/world' },
   { title: 'automobiles', link: '/automobiles' },
   { title: 'real estate', link: '/real-estate' },
-  { title: 'finance', link: '/world' },
+  { title: 'finance', link: '/finance' },
 ];
 
 export const Links: FunctionComponent<Props> = ({
@@ -34,22 +34,20 @@ export const Links: FunctionComponent<Props> = ({
     <nav className={styles.links}>
       {links.map(link => {
         return (
-          <>
-            <Link href={link.link} passHref>
-              <a
-                className={classNames(
-                  styles.headerMenuLink,
-                  activeLink === link.title && styles.headerMenuLinkActive,
-                )}
-                onClick={() => {
-                  setActiveLink(link.title);
-                  setOpenBurger(false);
-                }}
-              >
-                {link.title}
-              </a>
-            </Link>
-          </>
+          <Link href={link.link} key={link.link} passHref>
+            <a
+              className={classNames(
+                styles.headerMenuLink,
+                activeLink === link.title && styles.headerMenuLinkActive,
+              )}
+              onClick={() => {
+                setActiveLink(link.title);
+                setOpenBurger(false);
+              }}
+            >
+              {link.title}
+            </a>
+          </Link>
         );
       })}
     </nav>
