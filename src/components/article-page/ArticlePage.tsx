@@ -1,19 +1,20 @@
 import { FunctionComponent } from 'react';
-import { useRouter } from 'next/router';
 import Image from 'next/image';
 import { MEDIA_QUERY } from 'constants/screenSize';
 import { BASE_URL_IMAGE } from 'constants/api';
-import { useMediaQuerySSR } from 'hooks/useMediaQuerySSR';
 import { useArticle } from 'hooks/useArticle';
+import { useMediaQuerySSR } from 'hooks/useMediaQuerySSR';
 import { formatDate } from 'formatters/date';
 import { SectionTitle } from 'components/common/section-title/SectionTitle';
 
 import styles from './styles.module.scss';
 
-export const ArticlePage: FunctionComponent = () => {
-  const router = useRouter();
-  const { id } = router.query;
-  const { article, isLoading, isError } = useArticle(id);
+type Props = {
+  id: string;
+};
+
+export const ArticlePage: FunctionComponent<Props> = ({ id }) => {
+  const { article, isError, isLoading } = useArticle(id);
   const isDesktop = useMediaQuerySSR(MEDIA_QUERY);
 
   if (isLoading) return <div>Loading...</div>;
