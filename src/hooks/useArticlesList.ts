@@ -14,6 +14,6 @@ export const useArticlesList = (section: string): UseArticlesList => {
   return {
     articles: data && data.results,
     isLoading: !error && !data,
-    isError: error,
+    isError: error || !data.results,
   };
 };
