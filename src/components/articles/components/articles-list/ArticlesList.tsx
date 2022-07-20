@@ -7,13 +7,17 @@ import { ArticlesListItem } from './components/articles-list-item/ArticlesListIt
 
 import styles from './styles.module.scss';
 
-export const ArticlesList: FunctionComponent = () => {
-  const { articles, isLoading, isError } = useArticlesList('technology');
+type Props = {
+  section: string;
+};
+
+export const ArticlesList: FunctionComponent<Props> = ({ section }) => {
+  const { articles, isLoading, isError } = useArticlesList(section);
   const isDesktop = useMediaQuerySSR(MEDIA_QUERY);
 
   if (isLoading) return <div>Loading...</div>;
 
-  if (isError) return <div>Error</div>;
+  if (isError) return <div>Error with fetching data, try later</div>;
 
   return (
     <div className={styles.articlesList}>

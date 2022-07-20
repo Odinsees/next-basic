@@ -21,8 +21,8 @@ const links: LinksType = [
   { title: 'home', link: '/' },
   { title: 'world', link: '/world' },
   { title: 'automobiles', link: '/automobiles' },
-  { title: 'real estate', link: '/real-estate' },
-  { title: 'finance', link: '/finance' },
+  { title: 'books', link: '/books' },
+  { title: 'movies', link: '/movies' },
 ];
 
 export const Links: FunctionComponent<Props> = ({
